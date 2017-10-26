@@ -19,7 +19,7 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderComponent } from './order/order.component';
-import { InputComponent } from './shared/src/app/shared/input/input.component';
+import { InputComponent } from './shared/input/input.component';
 
 @NgModule({
   declarations: [
