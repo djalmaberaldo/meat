@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ContentChild, AfterContentInit, Input } from '@angular/core';
 import {NgModel} from '@angular/forms';
 
 @Component({
@@ -7,12 +7,12 @@ import {NgModel} from '@angular/forms';
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
-  label: string 
-  errorMessage: string
+  @Input() label: string
+  @Input() errorMessage: string
 
   input: any
 
-  @ContentChild(NgModel) model: NgModel 
+  @ContentChild(NgModel) model: NgModel;
 
   constructor() { }
 
@@ -31,6 +31,6 @@ export class InputComponent implements OnInit, AfterContentInit {
   }
 
   hasError(): boolean{
-    return this.input.invalid && (this.input.dirty || this.input.touched)
+    return !this.input.valid && (this.input.dirty || this.input.touched)
   }
 }
