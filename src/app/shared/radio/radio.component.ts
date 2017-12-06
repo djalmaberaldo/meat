@@ -1,6 +1,6 @@
 import { RadioOption } from './radio-option.model';
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms'
+import { NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms'
 
 @Component({
   selector: 'mt-radio',
@@ -18,9 +18,9 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
 
   @Input() options: RadioOption[]
 
-  value: any
+  value: any;
 
-  onChange: any
+  onChange: any;
 
   constructor() { }
 
@@ -29,14 +29,14 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
 
   setValue(value: any) {
     this.value = value;
-    this.onChange = value
+    this.onChange(this.value);
   }
 
   /**
      * Write a new value to the element.
      */
   writeValue(obj: any): void{
-    this.value = obj
+    this.value = obj;
   }
     /**
      * Set the function to be called when the control receives a change event.

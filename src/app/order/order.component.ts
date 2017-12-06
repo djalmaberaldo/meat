@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
+  delivery: number = 8;
+
   paymentOptions: RadioOption[] =[
     {label: 'Dinheiro', value: 'MON'},
     {label: 'Cartão de Débito', value: 'DEB'},
@@ -35,5 +37,9 @@ export class OrderComponent implements OnInit {
 
   remove(item: CartItem) {
     this.orderService.removeItem(item)
+  }
+
+  itemsValue(): number{
+    return this.orderService.itemsValue();
   }
 }
