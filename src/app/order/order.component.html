@@ -4,7 +4,7 @@
 
 <section class="content">
     <section class="invoice">
-        <form #form="ngForm" novalidate>
+        <form [formGroup]="orderForm  " novalidate>
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="page-header">
@@ -18,8 +18,18 @@
                     <p class="lead">Seus Dados:</p>
                 </div>
                 <div class="col-sm-6 col-xs-2">
-                    <mt-input-container label="Endereço" errorMessagge="Campo obrigatório e com 5 caracteres">
-                        <input class="form-control" name="name" ngModel required minlength="5" placeholder="Endereço">
+                    <mt-input-container label="Nome" errorMessagge="Campo obrigatório e com 5 caracteres">
+                        <input class="form-control" formControlName="name"  placeholder="Nome">
+                    </mt-input-container>
+                </div>
+                <div class="col-sm-3 col-xs-2">
+                    <mt-input-container label="Email" errorMessagge="Campo obrigatório e com 5 caracteres">
+                        <input class="form-control" formControlName="email"  placeholder="Email">
+                    </mt-input-container>
+                </div>
+                <div class="col-sm-3 col-xs-2">
+                    <mt-input-container label="Confirme e-mail" errorMessagge="Campo obrigatório e com 5 caracteres">
+                        <input class="form-control" formControlName="emailConfirmation"  placeholder="Confirmação de e-mail">
                     </mt-input-container>
                 </div>
             </div>
@@ -30,17 +40,17 @@
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
-                        <input class="form-control" name="address" ngModel required minlength="5" autocomplete="off">
+                        <input class="form-control" formControlName="address"  autocomplete="off">
                     </mt-input-container>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <mt-input-container errorMessage="Obrigatório e somente números" label="Número">
-                        <input type="text" class="form-control" ngModel name="number" pattern="^[0-9]*$" id="inputSuccess" required autocomplete="off" placeholder="Número">
+                        <input type="text" class="form-control" formControlName="number" id="inputSuccess" required autocomplete="off" placeholder="Número">
                     </mt-input-container>
                 </div>
                 <div class="col-sm-3 col-xs-6" label="Complemento">
                     <mt-input-container>
-                        <input type="text" class="form-control" name="optionalAddress" ngModel id="inputSuccess" placeholder="Complemento">
+                        <input type="text" class="form-control" formControlName="optionalAddress" id="inputSuccess" placeholder="Complemento">
                     </mt-input-container>
                 </div>
                 <!-- /.col -->
@@ -63,7 +73,7 @@
                     <p class="lead">Formas de Pagamento:</p>
 
                     <div class="form-group">
-                        <mt-radio [options]="paymentOptions" name="paymentOption" ngModel required></mt-radio>
+                        <mt-radio [options]="paymentOptions" formControlName="paymentOption" ngModel required></mt-radio>
                     </div>
 
                 </div>
