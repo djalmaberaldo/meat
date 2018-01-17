@@ -5,7 +5,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES} from './app.routes';
-import { FormsModule, FormBuilder, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';

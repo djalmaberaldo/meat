@@ -13,23 +13,25 @@
                 </div>
             </div>
 
+            {{orderForm.value | json}}
+
             <div class="row">
                 <div class="col-xs-12">
                     <p class="lead">Seus Dados:</p>
                 </div>
                 <div class="col-sm-6 col-xs-2">
-                    <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome" >
-                        <input class="form-control" formControlName="name" autocomplete="off"  placeholder="Nome">
+                    <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
+                        <input class="form-control" formControlName="name" autocomplete="off" placeholder="Nome">
                     </mt-input-container>
                 </div>
                 <div class="col-sm-3 col-xs-2">
                     <mt-input-container label="Email" errorMessage="Campo obrigatório e com 5 caracteres">
-                        <input class="form-control" formControlName="email"  placeholder="Email">
+                        <input class="form-control" formControlName="email" placeholder="Email">
                     </mt-input-container>
                 </div>
                 <div class="col-sm-3 col-xs-2">
                     <mt-input-container label="Confirme e-mail" errorMessage="Campo obrigatório e com 5 caracteres">
-                        <input class="form-control" formControlName="emailConfirmation"  placeholder="Confirmação de e-mail">
+                        <input class="form-control" formControlName="emailConfirmation" placeholder="Confirmação de e-mail">
                     </mt-input-container>
                 </div>
             </div>
@@ -40,7 +42,7 @@
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
-                        <input class="form-control" formControlName="address" placeholder="Endereço" autocomplete="off">
+                        <input class="form-control" placeholder="Endereço" formControlName="address" autocomplete="off">
                     </mt-input-container>
                 </div>
                 <div class="col-sm-3 col-xs-6">
