@@ -5,6 +5,7 @@ import { RadioOption } from './../shared/radio/radio-option.model';
 import { Component, OnInit } from '@angular/core';
 import { Order, OrderItem } from './order.model';
 import { Form, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { AbstractControl } from '@angular/forms/src/model';
 
 @Component({
   selector: 'mt-order',
@@ -39,7 +40,21 @@ export class OrderComponent implements OnInit {
       number: this.formBuilder.control('',[Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
       paymentOption: this.formBuilder.control('',[Validators.required])
-    })
+    },{validator: OrderComponent.equalsTo})
+  };
+
+  static equalsTo(group: AbstractControl): {[key: string]: boolean }{
+    const email = group.get('email');
+    const emailConfirmation = group.get('emailConfirmation');
+    if(!email || !emailConfirmation){
+      return undefined;
+    }
+
+    if(email.value != emailConfirmation.value){
+      return {emailsNotMatch:true};
+    }
+
+    return undefined
   }
 
   cartItems(): CartItem[] {
