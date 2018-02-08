@@ -1,6 +1,7 @@
 import { OrderService } from './order/order.service';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -53,6 +54,7 @@ import { RatingComponent } from './shared/rating/rating.component';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}, OrderService],
