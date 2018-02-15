@@ -3,7 +3,7 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES} from './app.routes';
 import { FormsModule, FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -51,7 +51,7 @@ import { RatingComponent } from './shared/rating/rating.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
