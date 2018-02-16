@@ -27,6 +27,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { RatingComponent } from './shared/rating/rating.component';
+import { LoginComponent } from './security/login/login.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RatingComponent } from './shared/rating/rating.component';
     OrderItemsComponent,
     DeliveryCostsComponent,
     OrderSummaryComponent,
-    RatingComponent
+    RatingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
