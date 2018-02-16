@@ -1,3 +1,4 @@
+import { handleAuthorization } from './authz';
 import { handleAuthentication } from './auth';
 import * as jsonServer from 'json-server'
 import {Express} from 'express'
@@ -22,6 +23,7 @@ server.use(jsonServer.bodyParser)
 
 //
 server.post('/login', handleAuthentication)
+server.use('/orders', handleAuthorization)
 
 server.use((req, res, next) => {
     if (req.method === 'POST') {
