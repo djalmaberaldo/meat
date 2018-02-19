@@ -3,7 +3,6 @@ import { LoginService } from './login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'mt-login',
   templateUrl: './login.component.html',
