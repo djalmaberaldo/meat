@@ -28,6 +28,7 @@ import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.componen
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { RatingComponent } from './shared/rating/rating.component';
 import { LoginComponent } from './security/login/login.component';
+import { LoginService } from './security/login/login.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { LoginComponent } from './security/login/login.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}, OrderService],
+  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}, OrderService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
